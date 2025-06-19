@@ -13,9 +13,9 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 app.use(cors({
-    origin: 'https://insightpilot.vercel.app', 
-    credentials: true,               
-  }));
+  origin: ['https://insightpilot.vercel.app', 'http://localhost:5173'],
+  credentials: true
+}));
 
   app.get('/api/test', (req, res) => {
     res.json({ message: 'CORS is working!' });
